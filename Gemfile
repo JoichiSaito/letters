@@ -64,3 +64,4 @@ gem 'kaminari'
 gem 'ransack'
 gem 'omniauth', '1.9.1'
 gem 'activeadmin'
+gem "rails-erd"
