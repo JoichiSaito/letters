@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>フォローリクエスト一覧</h3>
+
+  <table class="table">
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user.name, user, class: 'float-left' %>
+
+          <div class="request float-right">
+            <%= link_to "フォロー許可", user_answers_path(user.id), class: 'btn btn-info', method: :post %>
+            <%= link_to "フォロー拒否", user_answers_path(user.id), class: 'btn btn-danger', method: :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @users %>
+</div>

@@ -1,0 +1,7 @@
+<% if @board.questionnaire == true %>
+  <% if @board.joined_by?(current_user) %>
+    <%= link_to 'キャンセルする' , board_joins_path(@board.id), class: 'btn btn-danger', method: :delete, data: { confirm: 'キャンセルしてもよろしいですか？' }, remote: true %>
+  <% else %>
+    <%= link_to '参加する' , board_joins_path(@board.id), class: 'btn btn-info', method: :post, remote: true %>
+  <% end %>          
+<% end %>

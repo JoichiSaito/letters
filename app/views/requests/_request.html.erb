@@ -1,0 +1,11 @@
+<% if current_user != @user %>
+  <% if @user.requested_by?(current_user) %>
+    <div class="float-right">
+      <%= link_to "リクエスト取消", user_requests_path(@user.id), class: 'btn btn-danger', method: :delete, data: { confirm: 'リクエストを取り消してもよろしいですか？' }, remote: true %>
+    </div>
+  <% else %>
+    <div class="float-right">
+      <%= link_to "リクエスト送信", user_requests_path(@user.id), class: 'btn btn-info', method: :post, remote: true %>
+    </div>
+  <% end %>
+<% end %>

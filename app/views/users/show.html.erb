@@ -1,0 +1,35 @@
+<div class="container">
+  <h3 class="mb-4"><%= @user.name %></h3>
+
+  <div class="float-right">
+    <% if @user.id === current_user.id %>
+      <%= link_to 'フォロー', follows_user_path(current_user.id), class: 'btn btn-outline-dark' %>
+      <%= link_to 'フォロワー', followers_user_path(current_user.id), class: 'btn btn-outline-dark' %>
+
+      <% if current_user.private == true %>
+        <%= link_to 'フォローリクエスト一覧', user_requests_path(current_user.id), class: 'btn btn-outline-dark' %>
+      <% end %>
+
+      <%= link_to '編集', edit_user_registration_path, class: 'btn btn-outline-dark' %>
+    <% end %>
+  </div>
+
+  <% if @user.followed_by?(current_user) || @user.id == current_user.id %>
+
+    <%= render partial: 'show' %>
+
+  <% elsif @user.private == true %>
+
+    <div class="usershow clearfix">
+      <h4 class="mb-4">このユーザーは非公開です。<br />フォローリクエストを送りましょう。</h4>
+      <div id="requests_buttons_<%= @user.id %>" class="float-right">
+        <%= render partial: 'requests/request', locals: { user: @user} %>
+      </div>
+    </div>
+
+  <% else %>
+    
+    <%= render partial: 'show' %>
+
+  <% end %>
+</div>

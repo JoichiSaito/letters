@@ -1,0 +1,1 @@
+$('#requests_buttons_<%= @user.id %>').html('<%= j(render partial: 'requests/request', locals: { user: @user}) %>');

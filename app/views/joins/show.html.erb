@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      参加者一覧：参加人数 <%=  @board.joins.count %>
+    </div>
+        
+    <table class="table">
+      <% @joins.each do |join| %>
+        <tr>
+          <td><%= link_to join.user.name, join.user %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>  
+
+  <%= paginate @joins %>
+</div>

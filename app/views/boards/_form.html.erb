@@ -1,0 +1,25 @@
+<%= render 'boards_error_messages' %>
+
+<%= form_for board do |f| %>
+  <%= f.hidden_field :user_id %>
+  
+  <div class="form-group">
+    <%= f.label :title, 'タイトル(必須・最大30文字)' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content, '本文(必須・最大500文字)' %>
+    <%= f.text_area :content, class: 'form-control js-text', rows: 10 %>
+    <p class="js-text-count"></p>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :questionnaire, 'アンケート機能をつける' %>
+    <%= f.check_box :questionnaire %>
+  </div>
+  
+  <div>
+    <%= f.submit '保存', class: 'btn btn-primary mb-5' %>
+  </div>
+<% end %>

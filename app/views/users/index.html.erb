@@ -1,0 +1,13 @@
+<div class="container">
+  <h3>学校検索</h3>
+
+  <div class="searchform">
+    <%= search_form_for @q do |f| %>
+      <%= f.label :name, "学校名" %>
+      <%= f.search_field :name_cont %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+
+  <%= render partial: 'index', locals: { user: @user } %>
+</div>

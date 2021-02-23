@@ -1,0 +1,28 @@
+<div class="mb-4 clearfix" id="relationships_buttons_<%= @user.id %>">
+  <%= render partial: 'relationships/relationship', locals: {user: @user} %>
+</div>
+
+<% if @user.position === 0 %>
+  <h5 class="float-left">お知らせ一覧</h5>
+  <p class="float-right"><span class="badge badge-danger">ア</span>•••お知らせにアンケートがあります</p>
+  <table class="table">
+    <tr>
+      <th>タイトル</th>
+      <th>作成日時</th>
+      <th>更新日時</th>
+    </tr>
+    <% @boards.each do |board| %>
+      <tr>
+        <td><%= link_to board.title, board %>
+          <% if board.questionnaire === true %>
+              <span class="ml-2 badge badge-danger">ア</span>
+          <% end %>
+        </td>
+        <td><%= board.created_at.to_s(:datetime_jp) %></td>
+        <td><%= board.updated_at.to_s(:datetime_jp) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @boards %>
+<% end %>
