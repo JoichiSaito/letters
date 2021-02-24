@@ -72,6 +72,6 @@
 メールアドレス：rails@taro.com  
 パスワード：railstaro  
   
-https://forschool.letters-app.com/  
+http://www.letters-app.com/  
   
-トップページのリンク「ゲストユーザーとしてログインする」からログインページへアクセスできます。  
+トップページのナビゲーションバーの「ログイン」からログインページへアクセスできます。  
