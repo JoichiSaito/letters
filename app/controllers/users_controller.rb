@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show follows followers]
-  before_action :ensure_correct_user, only: %i[edit update]
+  before_action :authenticate_user!
 
   def index
     @q = User.where(position: 0).order('id DESC').ransack(params[:q])
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def ensure_correct_user
     @user = User.find_by(id: params[:id])
-    if @user.id != @current_user.id || @current_user.email == 'rails@taro.com'
+    if @user.id != @current_user.id || @current_user.email === 'rails@taro.com'
       flash[:notice] = '権限がありません'
       redirect_to root_path
     end

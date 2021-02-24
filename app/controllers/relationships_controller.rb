@@ -15,7 +15,7 @@ class RelationshipsController < ApplicationController
   private
   
   def ensure_correct_user
-    if current_user.email == 'rails@taro.com'
+    if current_user.email === 'rails@taro.com'
       flash[:notice] = '権限がありません'
       redirect_to root_path
     end
