@@ -6,6 +6,10 @@ RSpec.describe User, type: :model do
   end
 
   it "有効な2つ目のファクトリを持つこと" do
+    expect(FactoryBot.build(:user_school2)).to be_valid
+  end
+
+  it "有効な3つ目のファクトリを持つこと" do
     expect(FactoryBot.build(:user_parent)).to be_valid
   end
   
