@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @q = User.where(position: 0).order('id DESC').ransack(params[:q])
     @users = @q.result(distinct: true).page(params[:page])
   end
-  
+
   def show
     @board = Board.where(user_id: @user.id).order('id DESC')
     @boards = @board.page(params[:page])
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def followers
     @users = @user.followers.page(params[:page])
   end
-  
+
   private
 
   def ensure_correct_user
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
   def set_user
     @user = User.find(params[:id])
   end
