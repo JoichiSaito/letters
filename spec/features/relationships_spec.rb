@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Relationships", type: :feature do
   scenario "フォローボタンを押す", js: true do
-    visit new_user_registration_path
+    visit root_path
+    click_link "新規登録"
     fill_in "user[name]", with: "スプリング小学校"
     fill_in "メールアドレス(※登録後は変更できません)", with: "springs@example.com"
     fill_in "user[password]", with: "springshogakko"

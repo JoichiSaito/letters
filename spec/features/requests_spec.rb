@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Requests", type: :feature do
   scenario "フォローリクエストボタンを押す", js: true do
-    visit new_user_registration_path
+    visit root_path
+    click_link "新規登録"
     fill_in "user[name]", with: "フェニックス小学校"
     fill_in "メールアドレス(※登録後は変更できません)", with: "phoenix@example.com"
     fill_in "user[password]", with: "phoenixshogakko"

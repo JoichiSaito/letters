@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Joins", type: :feature do
   scenario "参加ボタンを押す", js: true do
-    user = FactoryBot.create(:user)
+    user = FactoryBot.create(:user_school)
     sign_in_as user
 
     click_link "お知らせ作成"
@@ -19,7 +19,7 @@ RSpec.feature "Joins", type: :feature do
   end
   
   scenario "参加者一覧ページ", js: true do
-    user = FactoryBot.create(:user)
+    user = FactoryBot.create(:user_school)
     sign_in_as user
   
     click_link "お知らせ作成"

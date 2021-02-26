@@ -17,3 +17,7 @@ services:
       - "3000:3000"
     links:
       - db
+  chrome:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - 4444:4444
