@@ -7,7 +7,7 @@ FactoryBot.define do
     position 0
   end
 
-  factory :user_school2 do
+  factory :user_school2, class: User do
     name 'ララベル小学校'
     email 'laravel@example.com'
     password 'laravelshogakko'
