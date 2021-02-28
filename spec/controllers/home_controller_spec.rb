@@ -4,7 +4,7 @@ RSpec.describe HomeController, type: :controller do
   describe '#index' do
     it '正常にレスポンスを返すこと' do
       get :index
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it '200レスポンスを返すこと' do

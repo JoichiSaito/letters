@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Board, type: :model do
-  it '有効な1つ目のファクトリを持つこと' do
-    expect(FactoryBot.build(:board_1)).to be_valid
-  end
-
-  it '有効な2つ目のファクトリを持つこと' do
-    expect(FactoryBot.build(:board_2)).to be_valid
-  end
 
   it '題名が無ければ無効であること' do
     board = Board.new(title: nil)

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :user_school, class: User do
     name 'レイルズ小学校'
-    email 'rails@example.com'
+    sequence(:email) { |n| "rails#{n}@example.com" }
     password 'railsshogakko'
     private true
     position 0
@@ -9,7 +9,7 @@ FactoryBot.define do
 
   factory :user_school2, class: User do
     name 'ララベル小学校'
-    email 'laravel@example.com'
+    sequence(:email) { |n| "laravel#{n}@example.com" }
     password 'laravelshogakko'
     private false
     position 0

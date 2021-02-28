@@ -10,7 +10,7 @@ RSpec.describe UsersController, type: :controller do
       it '正常にレスポンスを返すこと' do
         sign_in @user
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
@@ -31,7 +31,7 @@ RSpec.describe UsersController, type: :controller do
       it '正常にレスポンスを返すこと' do
         sign_in @user
         get :show, params: { id: @user.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
@@ -52,7 +52,7 @@ RSpec.describe UsersController, type: :controller do
       it '正常にレスポンスを返すこと' do
         sign_in @user
         get :follows, params: { id: @user.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
@@ -73,7 +73,7 @@ RSpec.describe UsersController, type: :controller do
       it '正常にレスポンスを返すこと' do
         sign_in @user
         get :followers, params: { id: @user.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 

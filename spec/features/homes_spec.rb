@@ -5,7 +5,9 @@ RSpec.feature 'Homes', type: :feature do
     scenario 'トップページ' do
       visit root_path
 
-      expect(page).to have_text('大切なお知らせ、もう見逃さない')
+      expect(page).to have_text('今すぐお知らせを届けよう！')
+      expect(page).to have_text('新規登録')
+      expect(page).to have_text('ログイン')
     end
   end
 

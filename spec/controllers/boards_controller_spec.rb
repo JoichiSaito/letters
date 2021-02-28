@@ -11,7 +11,7 @@ RSpec.describe BoardsController, type: :controller do
       it '正常にレスポンスを返すこと' do
         sign_in user_school
         get :new
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
@@ -104,12 +104,29 @@ RSpec.describe BoardsController, type: :controller do
     end
   end
 
+  describe '#show' do
+    context 'ログインユーザーとして' do
+      it '正常にレスポンスを返すこと' do
+        sign_in user_school
+        get :show, params: { id: board_1.id }
+        expect(response).to be_successful
+      end
+    end
+
+    context 'ゲストとして' do
+      it 'サインイン画面にリダイレクトすること' do
+        get :show, params: { id: board_1.id }
+        expect(response).to redirect_to '/users/sign_in'
+      end
+    end
+  end
+
   describe '#edit' do
     context 'ログインユーザー(学校)として' do
       it '正常にレスポンスを返すこと' do
         sign_in user_school
         get :edit, params: { id: board_1.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '他の学校がお知らせを編集しようとしたらトップページにリダイレクトすること' do
