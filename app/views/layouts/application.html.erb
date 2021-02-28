@@ -30,13 +30,14 @@
         <% end %>
       </div>
 
-      <button class="navbar-toggler bg-success" data-toggle="collapse" data-target="#navbarContents">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <% if user_signed_in? %>
+
+        <button class="navbar-toggler bg-success" data-toggle="collapse" data-target="#navbarContents">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       
-      <div id="navbarContents" class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <% if current_user %>
+        <div id="navbarContents" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <%= link_to('マイページ' , user_path(current_user), class: 'nav-link' )%>
             </li>
@@ -53,9 +54,10 @@
             <li class="nav-item">
               <%= link_to('ログアウト' , destroy_user_session_path, class: 'nav-link', method: :delete)%>
             </li>
-          <% end %>
-        </ul>
-      </div>
+          </ul>
+        </div>
+
+      <% end %>
     </nav>
 
     <p class="notice"><%= notice %></p>
