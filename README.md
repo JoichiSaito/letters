@@ -72,6 +72,6 @@
 メールアドレス：rails@taro.com  
 パスワード：railstaro  
   
-https://www.letters-app.com/  
+https://forschool.letters-app.com/  
   
 トップページのナビゲーションバーの「ログイン」からログインページへアクセスできます。  
