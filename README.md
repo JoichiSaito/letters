@@ -73,7 +73,7 @@
 メールアドレス：ruby@example.com  
 パスワード：rubyshogakko  
   
-・保護者側のサンプルアカウント  
+・保護者側のサンプルアカウント(投稿は作成できません)  
 メールアドレス：rails@taro.com  
 パスワード：railstaro  
   
